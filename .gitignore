@@ -2,3 +2,5 @@ db
 *.db
 _site/
 TODO
+*.pdf
+_parts/merged.md

@@ -1,0 +1,3 @@
+for f in `ls part*.md`; do pandoc $f -o $f.pdf; done
+
+gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=all.pdf part*.pdf
