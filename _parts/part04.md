@@ -113,7 +113,7 @@ If we try it ourselves, we'll see that there's some weird characters when we try
 db > insert 1 aaaaa... aaaaa...
 Executed.
 db > select
-(1, aaaaa...aaa\�, aaaaa...aaa\�)
+(1, aaaaa...aaa, aaaaa...aaa)
 Executed.
 db >
 ```
@@ -224,6 +224,7 @@ Calling `strtok` successively on the input buffer breaks it into substrings by i
 We can call [strlen()](http://www.cplusplus.com/reference/cstring/strlen/) on each text value to see if it's too long.
 
 We can handle the error like we do any other error code:
+
 ```diff
  enum PrepareResult_t {
    PREPARE_SUCCESS,
@@ -232,6 +233,7 @@ We can handle the error like we do any other error code:
    PREPARE_UNRECOGNIZED_STATEMENT
  };
 ```
+
 ```diff
  switch (prepare_statement(input_buffer, &statement)) {
    case (PREPARE_SUCCESS):
